@@ -65,15 +65,15 @@ module.exports = {
 	  jquery: 'jquery',
 	  "window.jQuery": "jquery"
 	}),
-	// new CopyPlugin({
-	//   patterns: [
-	// 	{
-	// 	  from: '**',
-	// 	  to: 'assets/img/',
-	// 	  context: './src/assets/img/'
-	// 	}
-	//   ],
-	// }),
+	new CopyPlugin({
+	  patterns: [
+		{
+		  from: '**',
+		  to: 'assets/img/',
+		  context: './src/assets/img/'
+		}
+	  ],
+	}),
   ],
   module: {
 	rules: [
