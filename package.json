@@ -30,6 +30,7 @@
     "bootstrap": "^4.6.0",
     "firebase": "^8.2.9",
     "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "precss": "^4.0.0",
     "ui-router": "^1.0.0-alpha.3"
   },

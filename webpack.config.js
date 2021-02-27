@@ -114,13 +114,9 @@ module.exports = {
 				  // if you use postcss 7.x skip the key
 				  postcssOptions: {
 					// postcss plugins, can be exported to postcss.config.js
-					plugins: function () {
-					  return [
-						require('autoprefixer')
-					  ];
+					plugins: [require('autoprefixer')]
 					}
 				  }
-				}
 			  }, {
 				// compiles Sass to CSS
 				loader: 'sass-loader'
