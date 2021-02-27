@@ -1,0 +1,27 @@
+{
+  "name": "firestoreblog",
+  "version": "1.0.0",
+  "description": "Simple firebase powered blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rouic/firestoreBlog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Alex Cottenham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rouic/firestoreBlog/issues"
+  },
+  "homepage": "https://github.com/Rouic/firestoreBlog#readme",
+  "dependencies": {
+    "angularjs": "^0.0.1",
+    "ui-router": "^1.0.0-alpha.3",
+    "webpack": "^5.24.2"
+  }
+}
