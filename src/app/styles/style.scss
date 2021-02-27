@@ -1,2 +1,9 @@
-@import "custom";
+@import "~bootstrap/scss/functions";
+@import "custom/functions";
+@import "~bootstrap/scss/variables";
+@import "custom/color-schemes/default";
+@import "custom/variables-bootstrap";
+@import "custom/variables-theme";
 @import "~bootstrap/scss/bootstrap";
+@import "custom/components";
+@import "override";
