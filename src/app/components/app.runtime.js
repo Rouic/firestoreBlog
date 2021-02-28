@@ -6,6 +6,9 @@ firestoreBlog.run(['$window', '$rootScope', '$state', '$stateParams', '$transiti
 		$window.history.back();
 	};		
 	
+	angular.element('body').removeClass('show');
+
+	
 	$transitions.onSuccess({}, function($transition){
 		var eTop = null;
 		$rootScope.title = ' - '+$state.current.title || 'Unknown';

@@ -1,4 +1,7 @@
 import 'bootstrap';
+import './app/styles/style.scss';
+
+
 
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
@@ -12,6 +15,10 @@ import 'firebase/performance';
 import 'firebase/analytics';
 import 'firebase/firestore';
 import 'firebase/database';
+
+
+import AOS from 'aos';
+
 
 /* Firebase config start */
 const firebaseConfig = {
@@ -34,6 +41,3 @@ global.firebase = firebase.default;
 /* Firebase config end */	  
 
 global.firestoreBlog = angular.module('firestoreBlog', [uiRouter, ngCookies, ngAnimate]);
-
-import './app/styles/style.scss';
-

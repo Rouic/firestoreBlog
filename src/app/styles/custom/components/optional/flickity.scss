@@ -4,7 +4,7 @@
 //
 //
 
-@import "CSS:../plugins/flickity.css";
+@import "./custom/components/plugins/flickity.css";
 
 [data-flickity]{
   &:not(.flickity-enabled){

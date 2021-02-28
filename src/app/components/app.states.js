@@ -12,6 +12,7 @@ firestoreBlog.config(['$stateProvider', '$urlRouterProvider', '$locationProvider
 			},
 			'header': {
 				templateUrl: require('../templates/header.html').default,
+				controller: 'header',
 			},
 			'footer': {
 				templateUrl: require('../templates/footer.html').default,
@@ -24,7 +25,7 @@ firestoreBlog.config(['$stateProvider', '$urlRouterProvider', '$locationProvider
 		url: '/',
 		views: {
 			'view': {
-				 templateUrl: require('../templates/pages/home.html').default,
+				templateUrl: require('../templates/pages/home.html').default,
 				controller: 'home'
 			}
 		}        

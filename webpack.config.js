@@ -52,12 +52,6 @@ module.exports = {
 	  filename: 'style.[contenthash:8].css',
 	  chunkFilename: 'style.[contenthash:8].css',
 	}),
-	new PurgecssPlugin({
-		  paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
-		  safelist: {
-			  greedy: [/md/]
-		}
-	}),
 	new CleanWebpackPlugin(),
 	new webpack.ProvidePlugin({
 	  jQuery: 'jquery',
@@ -83,27 +77,6 @@ module.exports = {
 			use: ["source-map-loader"],
 		  },
 		{
-		  test: /\.html$/,
-		  exclude: /index\.html$/,
-		  use: [
-			  {
-				  loader: 'file-loader',
-				  options: {
-					  name: 'template.[contenthash:8].html',
-					  outputPath: 'templates/'
-				  }
-			  },
-			  'extract-loader',
-			  {
-			  loader: 'html-loader',
-			  options: {
-				  attributes: false
-			  }
-			 
-				}
-		  ],
-		},
-		{
 			  test: /\.(scss)$/,
 			  use: [{
 				// inject CSS to page
@@ -124,7 +97,13 @@ module.exports = {
 				  }
 			  }, {
 				// compiles Sass to CSS
-				loader: 'sass-loader'
+				loader: 'sass-loader',
+				options: {
+					  sourceMap: true,
+					  sassOptions: {
+						outputStyle: "compressed",
+					  },
+					},
 			  }]
 			},
 		{
@@ -160,7 +139,28 @@ module.exports = {
 			outputPath: 'assets/fonts/'
 		  }
 		}]
-	  }
+	  },
+	  {
+			test: /\.html$/,
+			exclude: /index\.html$/,
+			use: [
+				{
+					loader: 'file-loader',
+					options: {
+						name: 'template.[contenthash:8].html',
+						outputPath: 'templates/'
+					}
+				},
+				'extract-loader',
+				{
+				loader: 'html-loader',
+				options: {
+					attributes: false
+				}
+			   
+				  }
+			],
+		  },
 	],
   },
 };
