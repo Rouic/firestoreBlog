@@ -7,12 +7,20 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+
 const PATHS = {
 	  src: path.join(__dirname, 'src')
 };
 
 module.exports = {
-  mode: 'development',
+	devServer: {
+		compress: true,
+		port: 8080
+	},
+  mode: 'production',
   entry: {
 	main: './src/index.js',
 	app: './src/app/app.js'
@@ -45,6 +53,12 @@ module.exports = {
 	},
   },
   plugins: [
+	new BrowserSyncPlugin({
+		host: 'localhost',
+		port: 3000,
+		server: { baseDir: ['dist'] },
+		single: true
+	}),
 	new HtmlWebpackPlugin({
 		template: './src/app/index.html',
 	}),
