@@ -14,6 +14,6 @@ firestoreBlog.controller('home', ['$timeout', function($timeout){
 		AOS.init({ once: true });
 		SVGInjector(document.querySelectorAll('[data-inject-svg]'));
 		
-	}, 500);
+	}, 1000);
 	
 }]);
