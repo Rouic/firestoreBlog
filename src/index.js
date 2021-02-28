@@ -1,5 +1,5 @@
 import 'bootstrap';
-import './app/styles/style.scss';
+import './assets/style/style.scss';
 
 
 
